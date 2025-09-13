@@ -3,12 +3,10 @@ def input_error(func):
         try:
             return func(*args, **kwargs)
         except ValueError:
-            return 'Give me name and phone please.'
+            return "Give me name and phone please."
         except KeyError:
-            return "Contact does not exist"
+            return "Contact does not exist."
         except IndexError:
-            return 'Give me a name please'
-        except TypeError:
-            return 'Change contact missing 2 required positional arguments: "name" and "phone"'
+            return "Exactly 1 argument (name) is required."
 
     return inner
